@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SafeNSObject'
-  s.version          = '0.1.0'
+  s.version          = '0.0.0'
   s.summary          = 'A short description of SafeNSObject.'
 
 # This description is used to generate tags and improve search results.
@@ -21,17 +21,17 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/wangchengqvan@gmail.com/SafeNSObject'
+  s.homepage         = 'https://github.com/OCModule/SafeNSObject'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wangchengqvan@gmail.com' => 'chengquan.wang@ele.me' }
-  s.source           = { :git => 'https://github.com/wangchengqvan@gmail.com/SafeNSObject.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/OCModule/SafeNSObject.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'SafeNSObject/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'SafeNSObject' => ['SafeNSObject/Assets/*.png']
   # }
