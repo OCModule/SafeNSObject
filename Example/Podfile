@@ -1,8 +1,12 @@
+use_frameworks!
 
 target 'SafeNSObject_Example' do
-  pod 'SafeNSObject', :path => '../'
-
-  target 'SafeNSObject_Tests' do
-    inherit! :search_paths
-  end
+    pod 'SafeNSObject', :path => '../'
+    
+    target 'SafeNSObject_Tests' do
+        inherit! :search_paths
+        
+        
+    end
 end
+

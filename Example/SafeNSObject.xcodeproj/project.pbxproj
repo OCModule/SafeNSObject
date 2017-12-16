@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1034CAD739BD63E8F9804922 /* libPods-SafeNSObject_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8997F19369288FE129C97C /* libPods-SafeNSObject_Example.a */; };
+		0DE80AF68A1864D9D740E280 /* Pods_SafeNSObject_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B544B34299AE8D7896CA063C /* Pods_SafeNSObject_Example.framework */; };
+		153523E2F563BCC61C9FF7D2 /* Pods_SafeNSObject_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449AAF9371A2393E1982EF47 /* Pods_SafeNSObject_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -29,7 +30,6 @@
 		AA2662851FE4EBFD007F52B5 /* CSNSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA26627E1FE4EBFD007F52B5 /* CSNSArrayTests.m */; };
 		AA2662861FE4EBFD007F52B5 /* CSNSStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA26627F1FE4EBFD007F52B5 /* CSNSStringTests.m */; };
 		AA2662871FE4EBFD007F52B5 /* CSNSMutableArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2662801FE4EBFD007F52B5 /* CSNSMutableArrayTests.m */; };
-		ED13984312655A9588962B7C /* libPods-SafeNSObject_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B42EABD0F4B6A18ADC41F21C /* libPods-SafeNSObject_Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C8997F19369288FE129C97C /* libPods-SafeNSObject_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SafeNSObject_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		449AAF9371A2393E1982EF47 /* Pods_SafeNSObject_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeNSObject_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		542F895E05F428B20465F6E8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* SafeNSObject_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeNSObject_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -75,7 +75,7 @@
 		AA26627F1FE4EBFD007F52B5 /* CSNSStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNSStringTests.m; sourceTree = "<group>"; };
 		AA2662801FE4EBFD007F52B5 /* CSNSMutableArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNSMutableArrayTests.m; sourceTree = "<group>"; };
 		B18D7CB7DF6A52CDDE58A0BD /* Pods-SafeNSObject_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeNSObject_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeNSObject_Tests/Pods-SafeNSObject_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B42EABD0F4B6A18ADC41F21C /* libPods-SafeNSObject_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SafeNSObject_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B544B34299AE8D7896CA063C /* Pods_SafeNSObject_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeNSObject_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1E9447516742CCC346A4EF /* Pods-SafeNSObject_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeNSObject_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeNSObject_Tests/Pods-SafeNSObject_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C2686D6323504943C97CAB10 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D71E8ED9F25A43459D018045 /* SafeNSObject.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SafeNSObject.podspec; path = ../SafeNSObject.podspec; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				1034CAD739BD63E8F9804922 /* libPods-SafeNSObject_Example.a in Frameworks */,
+				0DE80AF68A1864D9D740E280 /* Pods_SafeNSObject_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +100,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				ED13984312655A9588962B7C /* libPods-SafeNSObject_Tests.a in Frameworks */,
+				153523E2F563BCC61C9FF7D2 /* Pods_SafeNSObject_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +146,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				2C8997F19369288FE129C97C /* libPods-SafeNSObject_Example.a */,
-				B42EABD0F4B6A18ADC41F21C /* libPods-SafeNSObject_Tests.a */,
+				B544B34299AE8D7896CA063C /* Pods_SafeNSObject_Example.framework */,
+				449AAF9371A2393E1982EF47 /* Pods_SafeNSObject_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -591,6 +591,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SafeNSObject/SafeNSObject-Prefix.pch";
 				INFOPLIST_FILE = "SafeNSObject/SafeNSObject-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -606,6 +607,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SafeNSObject/SafeNSObject-Prefix.pch";
 				INFOPLIST_FILE = "SafeNSObject/SafeNSObject-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
