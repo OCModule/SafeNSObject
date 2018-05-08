@@ -14,13 +14,20 @@
 #else
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [self cs_swizzleMethod:@selector(cs_appendString:) targetClsName:@"__NSCFConstantString" targetSel:@selector(appendString:)];
-        [self cs_swizzleMethod:@selector(cs_appendFormat:) targetClsName:@"__NSCFConstantString" targetSel:@selector(appendFormat:)];
-        [self cs_swizzleMethod:@selector(cs_setString:) targetClsName:@"__NSCFConstantString" targetSel:@selector(setString:)];
-        [self cs_swizzleMethod:@selector(cs_insertString:atIndex:) targetClsName:@"__NSCFConstantString" targetSel:@selector(insertString:atIndex:)];
+        [self hookSelector:@selector(appendString:)];
+        [self hookSelector:@selector(appendFormat:)];
+        [self hookSelector:@selector(setString:)];
+        [self hookSelector:@selector(insertString:atIndex:)];
     });
 #endif
 }
+
++ (void)hookSelector:(SEL)sel {
+    NSString *clsName = @"__NSCFConstantString";
+    SEL newSel = NSSelectorFromString([NSString stringWithFormat:@"cs_%@", NSStringFromSelector(sel)]);
+    [self cs_swizzleMethod:newSel targetClsName:clsName targetSel:sel];
+}
+
 
 - (void)cs_appendString:(NSString *)aString {
     if (!aString) {

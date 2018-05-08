@@ -13,15 +13,21 @@
 #if DEBUG
 #else
     static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self cs_swizzleMethod:@selector(cs_objectAtIndex:) targetClsName:@"__NSArrayM" targetSel:@selector(objectAtIndex:)];
-        [self cs_swizzleMethod:@selector(cs_objectAtIndexedSubscript:) targetClsName:@"__NSArrayM" targetSel:@selector(objectAtIndexedSubscript:)];
-        [self cs_swizzleMethod:@selector(cs_addObject:) targetClsName:@"__NSArrayM" targetSel: @selector(addObject:)];
-        [self cs_swizzleMethod:@selector(cs_insertObject:atIndex:) targetClsName: @"__NSArrayM" targetSel:@selector(insertObject:atIndex:)];
-        [self cs_swizzleMethod:@selector(cs_removeObjectAtIndex:) targetClsName: @"__NSArrayM" targetSel: @selector(removeObjectAtIndex:)];
-        [self cs_swizzleMethod:@selector(cs_replaceObjectAtIndex:withObject:) targetClsName: @"__NSArrayM" targetSel: @selector(replaceObjectAtIndex:withObject:)];
+    dispatch_once(&onceToken, ^{        
+        [self hookSelector:@selector(objectAtIndex:)];
+        [self hookSelector:@selector(objectAtIndexedSubscript:)];
+        [self hookSelector:@selector(addObject:)];
+        [self hookSelector:@selector(insertObject:atIndex:)];
+        [self hookSelector:@selector(removeObjectAtIndex:)];
+        [self hookSelector:@selector(replaceObjectAtIndex:withObject:)];
     });
 #endif
+}
+
++ (void)hookSelector:(SEL)sel {
+    NSString *clsName = @"__NSArrayM";
+    SEL newSel = NSSelectorFromString([NSString stringWithFormat:@"cs_%@", NSStringFromSelector(sel)]);
+    [self cs_swizzleMethod:newSel targetClsName:clsName targetSel:sel];
 }
 
 - (id)cs_objectAtIndex: (NSUInteger)index {

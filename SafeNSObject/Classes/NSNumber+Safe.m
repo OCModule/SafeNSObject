@@ -13,10 +13,16 @@
 #else
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [self cs_swizzleMethod: @selector(cs_isEqualToNumber:) targetClsName: @"__NSCFNumber" targetSel: @selector(isEqualToNumber:)];
-        [self cs_swizzleMethod: @selector(cs_compare:) targetClsName: @"__NSCFNumber" targetSel: @selector(compare:)];
+        [self hookSelector: @selector(isEqualToNumber:)];
+        [self hookSelector: @selector(compare:)];
     });
 #endif
+}
+
++ (void)hookSelector:(SEL)sel {
+    NSString *clsName = @"__NSCFNumber";
+    SEL newSel = NSSelectorFromString([NSString stringWithFormat:@"cs_%@", NSStringFromSelector(sel)]);
+    [self cs_swizzleMethod:newSel targetClsName:clsName targetSel:sel];
 }
 
 - (BOOL)cs_isEqualToNumber:(NSNumber *)number {

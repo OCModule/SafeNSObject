@@ -14,13 +14,21 @@
 #else
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [self cs_swizzleMethod:@selector(cs_initWithObjects:count:) targetClsName:@"__NSPlaceholderArray" targetSel:@selector(initWithObjects:count:)];
-        [self cs_swizzleMethod:@selector(cs_objectAtIndex:) targetClsName:@"__NSArrayI" targetSel:@selector(objectAtIndex:)];
-        [self cs_swizzleMethod:@selector(cs_arrayByAddingObject:) targetClsName:@"__NSArrayI" targetSel:@selector(arrayByAddingObject:)];
-        [self cs_swizzleMethod:@selector(cs_objectAtIndexedSubscript:) targetClsName:@"__NSArrayI" targetSel:@selector(objectAtIndexedSubscript:)];
+        NSString *clsName = @"__NSPlaceholderArray";
+        [self hookSelector: @selector(initWithObjects:count:) targetName: clsName];
+        clsName = @"__NSArrayI";
+        [self hookSelector: @selector(objectAtIndex:) targetName: clsName];
+        [self hookSelector: @selector(arrayByAddingObject:) targetName: clsName];
+        [self hookSelector: @selector(objectAtIndexedSubscript:) targetName: clsName];
     });
 #endif
 }
+
++ (void)hookSelector:(SEL)sel targetName: (NSString *)aName {
+    SEL newSel = NSSelectorFromString([NSString stringWithFormat:@"cs_%@", NSStringFromSelector(sel)]);
+    [self cs_swizzleMethod:newSel targetClsName:aName targetSel:sel];
+}
+
 
 - (instancetype)cs_initWithObjects:(id *)objects count:(NSUInteger)count {
     NSUInteger newCnt = 0;
